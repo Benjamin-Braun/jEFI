@@ -60,7 +60,7 @@ void BasicRenderer::DrawOverlayMouseCursor(uint8_t* MouseCursor, Point Position,
             {
                 MouseCursorBuffer[X + Y * 16] = GetPix(Position.X + X, Position.Y + Y);
                 //PutPix(Position.X + X, Position.Y + Y, Colour);
-                if(GetPix(Position.X + X, Position.Y + Y) == 0xffffff) PutPix(Position.X + X, Position.Y + Y, 0x000000);
+                if(GetPix(Position.X + X, Position.Y + Y) >= 0xcccccc) PutPix(Position.X + X, Position.Y + Y, 0x000000);
                 else PutPix(Position.X + X, Position.Y + Y, 0xffffff);
                 MouseCursorBufferAfter[X + Y * 16] = GetPix(Position.X + X, Position.Y + Y);
 
@@ -213,4 +213,12 @@ void BasicRenderer::ScrollSingleCharUp(){
 
 void BasicRenderer::ScrollCharUp(int lines){
     for(int i=0; i<lines; i++) ScrollSingleCharUp();
+}
+
+void BasicRenderer::DrawRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint32_t color){
+    for(int Y=y; Y<height+y; Y++){
+        for(int X=x; X<width+x; X++){
+            PutPix(X, Y, color);
+        }
+    }
 }

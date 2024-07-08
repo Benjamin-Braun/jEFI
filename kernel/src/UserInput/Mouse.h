@@ -1,6 +1,7 @@
 #pragma once
 #include "../System/IO.h"
 #include "../Misc/Math.h"
+#include "../Shell/jwin.h"
 #include "../Graphics/BasicRenderer.h"
 
 #define PS2Leftbutton 0b00000001

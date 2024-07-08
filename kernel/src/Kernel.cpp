@@ -5,8 +5,11 @@
 extern "C" void KernelStart(BootInfo* BootInfo){
     KernelInfo KernelInfo = InitializeKernel(BootInfo);
     jWin_Window newWin;
+    newWin.PositionX = 100;
+    newWin.PositionY = 100;
     newWin.SizeX = 800;
     newWin.SizeY = 600;
+    newWin.title = "Hello World!";
     MainWin->AddWindow(&newWin);
     MainWin->DrawAll();
     //MainShell->Start();

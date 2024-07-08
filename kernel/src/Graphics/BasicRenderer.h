@@ -46,6 +46,7 @@ class BasicRenderer{
     void TickCursor();
     void ScrollUp(int lines);
     void ScrollCharUp(int lines);
+    void DrawRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint32_t color);
     private:
     bool TextCursorShown;
     void ScrollSingleCharUp();

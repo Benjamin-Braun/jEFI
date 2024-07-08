@@ -12,8 +12,11 @@
 
 class jWin_Window {
 public:
-    int SizeX;
-    int SizeY;
+    uint32_t SizeX;
+    uint32_t SizeY;
+    uint32_t PositionX;
+    uint32_t PositionY;
+    const char* title;
 };
 
 class jWin{
@@ -23,8 +26,12 @@ public:
     void DrawWindows();
     void DrawAll();
     int AddWindow(jWin_Window* win);
+    void LeftMouseButtonPressed();
+    void MiddleMouseButtonPressed();
+    void RightMouseButtonPressed();
     int WindowCount;
     jWin_Window* windows[8];
+    bool active;
 };
 
 extern jWin* MainWin;
