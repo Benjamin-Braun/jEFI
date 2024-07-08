@@ -6,16 +6,9 @@ jShell::jShell(){
     this->IsRightShiftPressed = false;
     this->IsLeftShiftPressed = false;
     this->CommandBufferSize = 0;
+    MainTitle->title_text = "The J Operating System";
     CursorPosition.X = 0;
     CursorPosition.Y = 16;
-}
-
-void jShell::DrawTitlebar(){
-    for(int i=0; i<GlobalRenderer->TargetFramebuffer->Width/8; i++){
-        GlobalRenderer->Print("\a", COLOR_BLUE);
-    }
-    GlobalRenderer->CursorPosition = {0, 0};
-    GlobalRenderer->Print("The J Operating System", COLOR_YELLOW);
 }
 
 void jShell::Start(){
@@ -24,7 +17,7 @@ void jShell::Start(){
     CursorPosition = {0, 0};
     MainKernel->BootState = 4;
     //GlobalRenderer->ClearColour = COLOR_DARK_GRAY;
-    this->DrawTitlebar();
+    MainTitle->Draw();
     GlobalRenderer->CursorPosition = {0, GlobalRenderer->TargetFramebuffer->Height-16};
     for(int i=0; i<GlobalRenderer->TargetFramebuffer->Width/8; i++){
         GlobalRenderer->Print("\a", COLOR_DARK_GRAY);
@@ -102,7 +95,7 @@ void jShell::Clear(uint32_t Color){
     uint32_t OldClearColor = GlobalRenderer->ClearColour;
     GlobalRenderer->ClearColour = Color;
     GlobalRenderer->Clear();
-    DrawTitlebar();
+    MainTitle->Draw();
     GlobalRenderer->ClearColour = OldClearColor;
     CursorPosition = {0, 0};
     Print("\n");
@@ -172,7 +165,7 @@ void jShell::ParseCommand(){
 
 
     else if(!strcmp(cmd_argv[0], "")){
-        Print("Don't know what you mean...");
+        Print("?");
     }
 
     Memset(&CommandBuffer, 0, sizeof(CommandBuffer));

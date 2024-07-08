@@ -2,7 +2,9 @@
 
 #include <stdint.h>
 #include "../Graphics/BasicRenderer.h"
+#include "../Shell/gui.h"
 #include "../Shell/Shell.h"
+#include "../Shell/jwin.h"
 #include "../Misc/CStr.h"
 #include "Memory/EFIMemory.h"
 #include "Memory/Memory.h"

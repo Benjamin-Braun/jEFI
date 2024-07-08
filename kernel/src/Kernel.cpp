@@ -4,7 +4,12 @@
 
 extern "C" void KernelStart(BootInfo* BootInfo){
     KernelInfo KernelInfo = InitializeKernel(BootInfo);
-    MainShell->Start();
+    jWin_Window newWin;
+    newWin.SizeX = 800;
+    newWin.SizeY = 600;
+    MainWin->AddWindow(&newWin);
+    MainWin->DrawAll();
+    //MainShell->Start();
     //GlobalRenderer->Print("\nPress F1 to start Shell.\nPress F2 to start Graphical User Interface.\n");
     while(true){
         MainKernel->Loop();

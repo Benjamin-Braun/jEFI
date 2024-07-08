@@ -111,6 +111,7 @@ void KernelStuff::Loop(){
 
 BasicRenderer r = BasicRenderer(NULL, NULL);
 jShell s = jShell();
+jWin w = jWin();
 KernelStuff k = KernelStuff();
 KernelInfo InitializeKernel(BootInfo* BootInfo){
     MainKernel = &k;
@@ -162,11 +163,15 @@ KernelInfo InitializeKernel(BootInfo* BootInfo){
     StartupStatusMessage("INFO", "Initialized ACPI.", 0);
     
     //s = jShell();
-    MainShell = &s;
-    StartupStatusMessage("INFO", "Initialized Shell.", 0);
+    
+    //MainShell = &s;
+    //StartupStatusMessage("INFO", "Initialized Shell.", 0);
+
+    MainWin = &w;
+    StartupStatusMessage("DEBUG", "Initialized jWin.", 0);
 
     StartupStatusMessage("INFO", "Done.", 0);
-    //GlobalRenderer->Print("\nBoot took: "); GlobalRenderer->Print(ToString(PIT::TimeSinceBoot/100)); GlobalRenderer->Print(" seconds.");
+    GlobalRenderer->Print("\nBoot took ~"); GlobalRenderer->Print(ToString(PIT::TimeSinceBoot/100)); GlobalRenderer->Print(" seconds");
     MainKernel->BootState = 3;
     PIT::Sleepd(1);
 

@@ -1,5 +1,6 @@
 #pragma once
 #include <stdint.h>
+#include "gui.h"
 #include "../Graphics/BasicRenderer.h"
 #include "../UserInput/KBScancodeTranslation.h"
 #include "../Misc/CStr.h"
@@ -22,7 +23,6 @@ public:
     void PutChar(char chr, uint32_t Color = 0xffffffff);
     void Clear(uint32_t Color = 0x00000000);
 private:
-    void DrawTitlebar();
     void DisplayInfo();
     bool IsLeftShiftPressed;
     bool IsRightShiftPressed;
