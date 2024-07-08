@@ -44,8 +44,6 @@ void BasicRenderer::ClearMouseCursor(uint8_t* MouseCursor, Point Position){
 }
 
 void BasicRenderer::DrawOverlayMouseCursor(uint8_t* MouseCursor, Point Position, uint32_t Colour){
-
-
     int XMax = 16;
     int YMax = 16;
     int DifferenceX = TargetFramebuffer->Width - Position.X;
