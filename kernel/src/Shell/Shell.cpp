@@ -6,7 +6,6 @@ jShell::jShell(){
     this->IsRightShiftPressed = false;
     this->IsLeftShiftPressed = false;
     this->CommandBufferSize = 0;
-    MainTitle->title_text = "The J Operating System";
     CursorPosition.X = 0;
     CursorPosition.Y = 16;
 }
@@ -177,13 +176,13 @@ void jShell::HandleKeyPress(uint8_t Scancode){
     if(MainKernel->BootState < 3) return;
     switch (Scancode){
         case KEY_F1:
-            //Start();
+            this->Start();
+            this->RunShell();
             return;
 
         case KEY_F2:
-            Clear();
-            Print("jUI is under development.\n\nPlease be patient :)");
-            RunShell();
+            MainWin->active = true;
+            MainWin->DrawAll();
             return;
 
         if(MainKernel->BootState < 4) return;

@@ -25,7 +25,8 @@ __attribute__((interrupt)) void GPFault_Handler(InterruptFrame* Frame){
 __attribute__((interrupt)) void KeyboardInt_Handler(InterruptFrame* Frame){
     uint8_t Scancode = InByte(0x60);
 
-    MainShell->HandleKeyPress(Scancode);
+    if(!MainWin->active) MainShell->HandleKeyPress(Scancode);
+    else MainWin->HandleKeyPress(Scancode);
 
     PIC_EndMaster();
 }

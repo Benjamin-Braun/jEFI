@@ -47,6 +47,7 @@ class BasicRenderer{
     void ScrollUp(int lines);
     void ScrollCharUp(int lines);
     void DrawRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint32_t color);
+    void DrawStraightLine(uint32_t x, uint32_t y, uint32_t length, uint32_t color, bool vertical = false);
     private:
     bool TextCursorShown;
     void ScrollSingleCharUp();

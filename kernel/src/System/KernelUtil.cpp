@@ -151,7 +151,7 @@ KernelInfo InitializeKernel(BootInfo* BootInfo){
     GlobalRenderer->Print("\nWelcome to "); GlobalRenderer->Print("jOS", COLOR_LIGHT_BLUE); GlobalRenderer->Print("!\n\n");
     GlobalRenderer->Print("jOS Version "); GlobalRenderer->Print(KERNEL_VERSION);
     GlobalRenderer->Print("\nLicensed under MIT; For more infos, type 'license';\n<https://mit-license.org/>\n\n");
-    PIT::Sleepd(1);
+    //PIT::Sleepd(1);
 
     InitializeHeap((void*)0x0000100000000000, 0x10);
     StartupStatusMessage("INFO", "Initialized Heap.", 0);
@@ -164,11 +164,11 @@ KernelInfo InitializeKernel(BootInfo* BootInfo){
     
     //s = jShell();
     
-    //MainShell = &s;
-    //StartupStatusMessage("INFO", "Initialized Shell.", 0);
+    MainShell = &s;
+    StartupStatusMessage("INFO", "Initialized Shell.", 0);
 
-    MainWin = &w;
-    StartupStatusMessage("DEBUG", "Initialized jWin.", 0);
+    //MainWin = &w;
+    //StartupStatusMessage("DEBUG", "Initialized jWin.", 0);
 
     StartupStatusMessage("INFO", "Done.", 0);
     GlobalRenderer->Print("\nBoot took ~"); GlobalRenderer->Print(ToString(PIT::TimeSinceBoot/100)); GlobalRenderer->Print(" seconds");

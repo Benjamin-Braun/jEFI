@@ -8,6 +8,7 @@ namespace QWERTYKeyboard{
     #define KEY_ENTER 0x1C
     #define KEY_BACKSPACE 0x0E
     #define KEY_SPACEBAR 0x39
+    #define KEY_LEFT_ALT 0x38
 
     #define KEY_F1 0x3B
     #define KEY_F2 0x3C

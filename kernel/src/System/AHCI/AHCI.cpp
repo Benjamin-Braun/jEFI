@@ -187,10 +187,10 @@ namespace AHCI{
             Memset(Port->Buffer, 0, 0x1000);
 
             Port->Read(0, 4, Port->Buffer);
-            for (int t = 0; t < 1024; t++){
-                GlobalRenderer->PutChar(Port->Buffer[t]);
+            for (int t = 0; t < 10; t++){
+                //GlobalRenderer->PutChar(Port->Buffer[t]);
             }
-            GlobalRenderer->Next();
+            //GlobalRenderer->Next();
         }
     }
 

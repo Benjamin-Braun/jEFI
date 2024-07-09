@@ -222,3 +222,10 @@ void BasicRenderer::DrawRect(uint32_t x, uint32_t y, uint32_t width, uint32_t he
         }
     }
 }
+
+void BasicRenderer::DrawStraightLine(uint32_t x, uint32_t y, uint32_t length, uint32_t color, bool vertical){
+    for(int i=0; i<length; i++){
+        if(!vertical) PutPix(x+i, y, color);
+        if(vertical) PutPix(x, y+i, color);
+    }
+}

@@ -17,6 +17,12 @@ public:
     uint32_t PositionX;
     uint32_t PositionY;
     const char* title;
+    bool resizable;
+    //uint32_t screen[1920*1080];
+
+    void Start();
+    void Update();
+    void OnExit();
 };
 
 class jWin{
@@ -24,14 +30,22 @@ public:
     jWin();
     void DrawDesktop();
     void DrawWindows();
+    void DrawWindowBorders(bool removeOld = false);
     void DrawAll();
     int AddWindow(jWin_Window* win);
     void LeftMouseButtonPressed();
     void MiddleMouseButtonPressed();
     void RightMouseButtonPressed();
-    int WindowCount;
+    void HandleKeyPress(uint8_t Scancode);
+    void HandleMouse();
+    uint32_t WindowCount;
+    uint32_t ActiveWindow;
     jWin_Window* windows[8];
     bool active;
+private:
+    bool IsLeftShiftPressed;
+    bool IsRightShiftPressed;
+    bool IsAltPressed;
 };
 
 extern jWin* MainWin;

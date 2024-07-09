@@ -140,6 +140,8 @@ void ProcessMousePacket(){
         GlobalRenderer->ClearMouseCursor(MousePointer, MousePositionOld);
         GlobalRenderer->DrawOverlayMouseCursor(MousePointer, MousePosition, 0xffffffff);
 
+        if(MainWin->active) MainWin->HandleMouse();
+
         if (MousePacket[0] & PS2Leftbutton){
             if(MainWin->active) MainWin->LeftMouseButtonPressed();
         }
