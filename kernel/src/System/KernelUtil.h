@@ -17,8 +17,8 @@
 #include "ACPI/ACPI.h"
 #include "PCI/PCI.h"
 
-#define KERNEL_VERSION "0.1.1"
-#define OS_VERSION "0.1.0"
+#define KERNEL_VERSION "0.1.4"
+#define OS_VERSION "0.1.3"
 
 struct BootInfo {
 	Framebuffer* BootFramebuffer;

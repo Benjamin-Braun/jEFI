@@ -25,7 +25,10 @@ void jShell::Start(){
     GlobalRenderer->Colour = COLOR_WHITE;
     GlobalRenderer->ClearColour = COLOR_DARK_GRAY;
     GlobalRenderer->Print("jShell> ", COLOR_WHITE);
-    Print("\njOS ", COLOR_LIGHT_BLUE); Print(OS_VERSION);
+
+    Print("\nWelcome to "); Print("jOS", COLOR_LIGHT_BLUE); Print("!");
+    Print("\n\nCopyright (c) 2024 Benjamin Braun\nLicensed under MIT License; For more information, type 'license';");
+    Print("\n\njOS ", COLOR_LIGHT_BLUE); Print(OS_VERSION);
     Print("\njKern ", COLOR_LIGHT_BLUE); Print(KERNEL_VERSION);
     Print("\njShell ", COLOR_LIGHT_BLUE); Print(SHELL_VERSION);
 }
@@ -160,6 +163,9 @@ void jShell::ParseCommand(){
     }
     else if(strcmp(cmd_argv[0], "dpci")){
         Print("PCI");
+    }
+    else if(strcmp(cmd_argv[0], "dpanic")){
+        Panic("Debug Panic; Nothing went wrong, hopefully :)");
     }
 
 

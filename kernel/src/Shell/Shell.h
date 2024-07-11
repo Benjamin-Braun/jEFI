@@ -9,6 +9,7 @@
 #include "../System/Scheduling/PIT/PIT.h"
 #include "../System/PCI/PCI.h"
 #include "../System/AHCI/AHCI.h"
+#include "../System/Panic.h"
 
 #define SHELL_VERSION "0.1.2"
 
