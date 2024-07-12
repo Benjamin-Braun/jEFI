@@ -164,6 +164,9 @@ void jShell::ParseCommand(){
     else if(strcmp(cmd_argv[0], "dpci")){
         Print("PCI");
     }
+    else if(strcmp(cmd_argv[0], "dfat32")){
+        FAT32::PrintBootSector();
+    }
     else if(strcmp(cmd_argv[0], "dpanic")){
         Panic("Debug Panic; Nothing went wrong, hopefully :)");
     }

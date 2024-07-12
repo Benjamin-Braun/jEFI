@@ -1,5 +1,13 @@
 #include "fat32.h"
 
 namespace FAT32 {
-    // yeah, not yet.
+    FAT32_BootSector bootSector;
+
+    void ReadBootSector(){
+       bootSector.bytes_per_sec = GlobalAHCI->ReadPort(0, 3);
+    }
+
+    void PrintBootSector(){
+        MainShell->Print("LOL");
+    }
 }

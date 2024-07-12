@@ -10,6 +10,7 @@
 #include "../System/PCI/PCI.h"
 #include "../System/AHCI/AHCI.h"
 #include "../System/Panic.h"
+#include "../System/Filesystem/fat32.h"
 
 #define SHELL_VERSION "0.1.2"
 
