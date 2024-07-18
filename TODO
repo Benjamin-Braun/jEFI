@@ -1,0 +1,18 @@
+- Filesystem
+    OS: FAT32
+    OS: jFS
+    OTHER: jFS Interface
+- jLang
+    OTHER: jlci (jLang Compiler & Interpreter)
+        - syntax
+        - ToCpp
+        - ToLua
+        - ToPython
+        - Interpreter
+    OS: jlci native support
+- jMF (jMedia Viewer)
+    OTHER: jMV (jMedia Viewer)
+    OS: jMF native support with jMV
+- Networking
+- native apps
+    OS: file browser

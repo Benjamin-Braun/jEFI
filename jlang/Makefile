@@ -1,9 +1,9 @@
 compile:
-	g++ -o bin/jlc src/*.cpp -Wall
+	g++ -o bin/jlci src/*.cpp -Wall
 
 run:
 	bin/jlc
 
 compile.run:
-	g++ -o bin/jlc src/*.cpp -Wall
-	bin/jlc
+	g++ -o bin/jlci src/*.cpp -Wall
+	bin/jlci
