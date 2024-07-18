@@ -2,6 +2,12 @@
 
 #include "main.h"
 
+enum ConversionTypes {
+    ToCpp,
+    ToLua,
+    ToPython
+};
+
 class File {
 public:
     string input_filename;
@@ -13,10 +19,4 @@ private:
     void ConvertToCpp();
     void ConvertToLua();
     void ConvertToPython();
-};
-
-enum ConversionTypes {
-    ToCpp,
-    ToLua,
-    ToPython
 };

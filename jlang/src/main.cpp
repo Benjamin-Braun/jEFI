@@ -6,11 +6,11 @@ void PrintVersion(){
 
 void ParseArgs(int argc, char* argv[]){
     File file;
-    bool conversion;
+    bool conversion = false;
     for(int i=0; i<argc; i++){
         if(strcmp(argv[i], "-v") == 0 || strcmp(argv[i], "--version") == 0) PrintVersion();
         if(strcmp(argv[i], "-c") == 0 || strcmp(argv[i], "--convert") == 0) conversion = true;
-        if(strcmp(argv[i], "--cpp") == 0) file.ConvType = ConversionTypes::ToCpp;
+        if(strcmp(argv[i], "--cpp") == 0 && conversion) file.ConvType = ConversionTypes::ToCpp;
     }
 }
 
